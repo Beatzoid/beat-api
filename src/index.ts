@@ -1,6 +1,8 @@
+require("dotenv").config();
 import express from "express";
 import Canvas, { loadImage } from "canvas";
 import { wrapText } from "./utils";
+import axios from "axios";
 
 const app = express();
 
@@ -40,6 +42,24 @@ app.get("/emergencyMeeting", async (req, res) => {
         "Content-Type": "image/png"
     });
     return res.end(canvas.toBuffer());
+});
+
+app.get("/weather", async (req, res) => {
+    const city = req.query.city;
+    if (!city) return res.status(400).json({ error: "No city provided" });
+
+    axios
+        .get(
+            `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.WEATHER_API}`
+        )
+        .then((data) => {
+            return res.json(data.data);
+        })
+        .catch((err) => {
+            return res.json({ error: err.response.data.message });
+        });
+
+    return;
 });
 
 app.listen(process.env.PORT || 5000, () =>
