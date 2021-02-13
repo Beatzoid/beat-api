@@ -11,4 +11,3 @@ https://beat-api.herokuapp.com
 | Name              | Description                                                           | Parameters              |
 | ----------------- | --------------------------------------------------------------------- | ----------------------- |
 | Emergency Meeting | Generates an emergency meeting image. Example: https://prnt.sc/zeqasq | text: The text you want |
-|                   |                                                                       |                         |
