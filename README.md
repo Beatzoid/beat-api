@@ -2,6 +2,13 @@
 
 A utility/fun API with various endpoints
 
+# Live URL
+
+https://beat-api.herokuapp.com
+
 # Routes
 
-None so far, check back later as this project has just started
+| Name              | Description                                                           | Parameters              |
+| ----------------- | --------------------------------------------------------------------- | ----------------------- |
+| Emergency Meeting | Generates an emergency meeting image. Example: https://prnt.sc/zeqasq | text: The text you want |
+|                   |                                                                       |                         |
