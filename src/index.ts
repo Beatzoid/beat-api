@@ -33,9 +33,7 @@ app.get("/emergencyMeeting", async (req, res) => {
     wrapText(ctx, req.query.text as string, 10, 30, canvas.width, 25);
 
     // Draw Emergency Meeting Picture
-    const bg = await loadImage(
-        `${__dirname}/images/among-us-emergency-meeting.jpg`
-    );
+    const bg = await loadImage("https://i.imgur.com/kpiG6nn.jpg");
     ctx.drawImage(bg, 0, canvas.height / 2, canvas.width, canvas.height / 2);
 
     res.writeHead(200, {
