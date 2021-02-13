@@ -11,7 +11,7 @@ app.get("/", (_, res) => {
         routes: {
             "/": "A route that displays this message",
             "/emergencyMeeting?text=text":
-                "Generates an emergency meeting image. Text is the text you want, example:"
+                "Generates an emergency meeting image. Text is the text you want. Example: https://prnt.sc/zeqasq"
         }
     });
 });
