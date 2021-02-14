@@ -30,7 +30,8 @@ app.get("/", (_, res) => {
             "/": "A route that displays this message",
             "/emergencyMeeting?text=text":
                 "Generates an emergency meeting image. Text is the text you want. Example: https://prnt.sc/zeqasq",
-            "/weather?city=city": "Get the weather for a city"
+            "/weather?city=city": "Get the weather for a city",
+            "/shorten?url=url": "Shorten a url"
         }
     });
 });
