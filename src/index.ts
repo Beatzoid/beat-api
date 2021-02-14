@@ -3,8 +3,24 @@ import express from "express";
 import Canvas, { loadImage } from "canvas";
 import { wrapText } from "./utils";
 import axios from "axios";
+import rateLimit from "express-rate-limit";
 
 const app = express();
+// For heroku
+app.set("trust proxy", 1);
+
+const limiter = rateLimit({
+    windowMs: 1 * 60 * 1000, // 1 minutes
+    max: 100, // limit each IP to 100 requests per windowMs
+    handler: function (_, res) {
+        res.status(429).send({
+            error: "You have been rate limited",
+            limit: "100 requests every minute"
+        });
+    }
+});
+
+app.use(limiter);
 
 app.get("/", (_, res) => {
     res.json({
