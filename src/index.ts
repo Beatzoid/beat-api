@@ -79,6 +79,22 @@ app.get("/weather", async (req, res) => {
     return;
 });
 
+app.get("/shorten", async (req, res) => {
+    const url = (req.query.url as string).trim();
+    if (!url) return res.status(400).json({ error: "No URL specified" });
+
+    axios
+        .post(`https://cleanuri.com/api/v1/shorten`, { url })
+        .then((data) => {
+            return res.json({ url: data.data.result_url });
+        })
+        .catch((err) => {
+            return res.json({ error: err.response.data.error });
+        });
+
+    return;
+});
+
 app.listen(process.env.PORT || 5000, () =>
     console.log(
         `Server listening on http://localhost:${process.env.PORT || 5000}`
