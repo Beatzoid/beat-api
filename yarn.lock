@@ -485,7 +485,8 @@ etag@~1.8.1:
 
 express-rate-limit@nfriedly/express-rate-limit:
   version "5.2.5"
-  resolved "https://codeload.github.com/nfriedly/express-rate-limit/tar.gz/19b8c247c84bdfc2d3704b35d4a98cb3e00251fe"
+  uid f033c71de2b0246ce0bc899bb5a6087be9fa3309
+  resolved "https://codeload.github.com/nfriedly/express-rate-limit/tar.gz/f033c71de2b0246ce0bc899bb5a6087be9fa3309"
 
 express@^4.17.1:
   version "4.17.1"
