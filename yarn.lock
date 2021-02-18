@@ -484,9 +484,9 @@ etag@~1.8.1:
   integrity sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
 
 express-rate-limit@nfriedly/express-rate-limit:
-  version "5.2.5"
-  uid f033c71de2b0246ce0bc899bb5a6087be9fa3309
-  resolved "https://codeload.github.com/nfriedly/express-rate-limit/tar.gz/f033c71de2b0246ce0bc899bb5a6087be9fa3309"
+  version "5.2.6"
+  uid "1f11f793d39780fe75d13620f739d200a94b3d2e"
+  resolved "https://codeload.github.com/nfriedly/express-rate-limit/tar.gz/1f11f793d39780fe75d13620f739d200a94b3d2e"
 
 express@^4.17.1:
   version "4.17.1"
