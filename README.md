@@ -19,3 +19,4 @@ The rate limit is 100 requests per minute, any more will result in a 429.
 | URL Shortener     | Shorten a URL                                                         | url: The url you want to shorten        |
 | Cat               | Get a random image of a cat                                           | None                                    |
 | Dog               | Get a image image of a dog                                            | None                                    |
+| Roast             | Get a random roast                                                    | None                                    |

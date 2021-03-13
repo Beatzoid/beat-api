@@ -33,7 +33,8 @@ app.get("/", (_, res) => {
             "/weather?city=city": "Get the weather for a city",
             "/shorten?url=url": "Shorten a url",
             "/cat": "Get a random cat image or gif",
-            "/dog": "Get a random dog image"
+            "/dog": "Get a random dog image",
+            "/roast": "Get a random roast"
         }
     });
 });
@@ -114,6 +115,17 @@ app.get("/dog", async (_, res) => {
         .get("https://random.dog/woof.json")
         .then((response) => {
             return res.json({ url: response.data.url });
+        })
+        .catch((err) => {
+            return res.status(500).json({ error: err.message });
+        });
+});
+
+app.get("/roast", (_, res) => {
+    axios
+        .get("https://evilinsult.com/generate_insult.php?lang=en&type=json")
+        .then((response) => {
+            return res.json({ roast: response.data.insult });
         })
         .catch((err) => {
             return res.status(500).json({ error: err.message });
