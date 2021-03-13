@@ -32,7 +32,8 @@ app.get("/", (_, res) => {
                 "Generates an emergency meeting image. Text is the text you want. Example: https://prnt.sc/zeqasq",
             "/weather?city=city": "Get the weather for a city",
             "/shorten?url=url": "Shorten a url",
-            "/cat": "Get a random cat image or gif"
+            "/cat": "Get a random cat image or gif",
+            "/dog": "Get a random dog image"
         }
     });
 });
@@ -102,6 +103,17 @@ app.get("/cat", async (_, res) => {
         .get("https://api.thecatapi.com/v1/images/search")
         .then((response) => {
             return res.json({ url: response.data[0].url });
+        })
+        .catch((err) => {
+            return res.status(500).json({ error: err.message });
+        });
+});
+
+app.get("/dog", async (_, res) => {
+    axios
+        .get("https://random.dog/woof.json")
+        .then((response) => {
+            return res.json({ url: response.data.url });
         })
         .catch((err) => {
             return res.status(500).json({ error: err.message });
