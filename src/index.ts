@@ -41,7 +41,7 @@ app.get("/", (_, res) => {
 
 app.get("/emergencyMeeting", async (req, res) => {
     if (!req.query.text)
-        return res.status(400).json({ error: "No text provided" });
+        return res.status(400).json({ message: "No text provided" });
 
     const canvas = Canvas.createCanvas(600, 400);
     const ctx = canvas.getContext("2d");
@@ -67,7 +67,7 @@ app.get("/emergencyMeeting", async (req, res) => {
 
 app.get("/weather", async (req, res) => {
     const city = req.query.city;
-    if (!city) return res.status(400).json({ error: "No city provided" });
+    if (!city) return res.status(400).json({ message: "No city provided" });
 
     axios
         .get(
@@ -85,7 +85,7 @@ app.get("/weather", async (req, res) => {
 
 app.get("/shorten", async (req, res) => {
     const url = (req.query.url as string).trim();
-    if (!url) return res.status(400).json({ error: "No URL specified" });
+    if (!url) return res.status(400).json({ message: "No URL specified" });
 
     axios
         .post(`https://cleanuri.com/api/v1/shorten`, { url })
