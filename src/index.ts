@@ -24,6 +24,7 @@ app.use(limiter);
 
 app.get("/", (_, res) => {
     res.json({
+        wrappers: ["https://www.npmjs.com/package/beat-api.js"],
         message:
             "Hello API user! This is a list of all routes avalible for you to use",
         routes: {

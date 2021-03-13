@@ -10,6 +10,10 @@ https://beat-api.herokuapp.com
 
 The rate limit is 100 requests per minute, any more will result in a 429.
 
+# Official Wrappers
+
+- https://www.npmjs.com/package/beat-api.js
+
 # Routes
 
 | Name              | Description                                                           | Parameters                              |
